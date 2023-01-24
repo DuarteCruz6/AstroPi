@@ -16,6 +16,7 @@ The results will be publish in graphical comprehensive detail with public access
 
 We plan to gather the maximum sensors data. The data will be saved in a .CSV file, processed and organized by type. As a backup, raw data from the sensors, with time stamp will also be saved.
 
+
 **MISSION SPACE LAB REQUIREMENTS**
 - Needs to use the LED matrix
 - Needs to use at least one sensor
