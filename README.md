@@ -1,4 +1,6 @@
-Code for AstroPi 2022/2023 - Project Hercules
+*** This project was made for Mission Space Lab ***
+
+**Code for AstroPi 2022/2023 - Project Hercules**
 
 Our proposal aims create a analog mission to study the human performance on long space travel or long stays in a space station. We also want to study ways to mitigate these problems.
 
@@ -13,3 +15,58 @@ According to the WHO, safe and healthy working environments are fundamental to m
 The results will be publish in graphical comprehensive detail with public access.
 
 We plan to gather the maximum sensors data. The data will be saved in a .CSV file, processed and organized by type. As a backup, raw data from the sensors, with time stamp will also be saved.
+
+**MISSION SPACE LAB REQUIREMENTS**
+- Needs to use the LED matrix
+- Needs to use at least one sensor
+- Can't record videos and can't also take photos
+- Can't communicate with the Earth
+- The program needs to close after 3 hours
+- Can only use the ISS's libraries
+- Needs to be in a ZIP File
+
+**HARDWARE**
+- Raspberry Pi 4 4GB
+- Sense HAT
+- Passive Infrared (PIR) Sensor
+- Tall header pins
+- 3x F-F jumper wires (to connect the PIR Sensor to the Raspberry Pi)
+- 3D-printed filght case
+- Power Supply unit
+- 16GB microSD card
+- HDMI Cable
+
+  NOTES:
+  The Sense HAT contains many different sensors such as:
+    - Gyroscope
+    - Accelerometer
+    - Magnetometer
+    - Temperature
+    - Barometric Pressure
+    - Humidity
+    - Colour and brightness
+    It also contains a 8x8 RGB LED matrix and a five-button joystick
+
+**SOFTWARE**
+- Special version of the Raspberry Pi Desktop OS (Bullseye 32 bit) that contains the same programs and libraries as the Astro Pis aboard the ISS (International Space Station)
+- Thonny 
+
+**LIBRARIES**
+- SenseHat (from sense_hat)
+- PAth (from pathlib)
+- pandas
+- MotionSensor (from gpiozero)
+- time
+- datetime, timedelta (from datetime)
+
+**EVALUATION CRITERIA**
+- Does it have scientific use?
+- Can you understand the code?
+- Is the code doccumented?
+- Is the code well structured?
+- Is it copied from other sources?
+- Is it easily reproduced?
+- Is the data usable/interesting?
+
+**IMPORTANT NOTE**
+Make sure to save both files in the same location (file, per example)
