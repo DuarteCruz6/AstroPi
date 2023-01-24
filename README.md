@@ -69,4 +69,4 @@ We plan to gather the maximum sensors data. The data will be saved in a .CSV fil
 - Is the data usable/interesting?
 
 NOTE:
-- Make sure to save both files in the same location (file, per example)
+- Make sure to save both files in the same location (create a paste with both, per example)
