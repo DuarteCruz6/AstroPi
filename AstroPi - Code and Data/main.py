@@ -23,7 +23,7 @@ data_file = base_folder / "data.csv"
 i = 0
 dic = ["TIME","MOTION","PRESSURE", "TEMPERATURE FROM HUMIDITY SENSOR","TEMPERATURE FROM PRESSURE SENSOR","HUMIDITY","LIGHT", "MOVIMENT X-ASSIS", "MOVIMENT Y-ASSIS", "MOVIMENT Z-ASSIS", "ACCELERATION X-ASSIS", "ACCELERATION Y-ASSIS", "ACCELERATION Z-ASSIS"]
 x = timedelta(hours = 2, minutes = 59, seconds = 42) 
-loopTime = {0:15, 1:6, 2:18, 3:19, 4:7, 5:11, 6:12, 7:12, 8:12, 9:13,10:13,11:13}
+loopTime = {0:15, 1:6, 2:18, 3:19, 4:7, 5:11, 6:12, 7:12, 8:12, 9:13,10:13,11:13} #How much it takes to each data + value to show on the LED matrix
 
 #Writes an Header on the .csv file
 with open (data_file, "w", buffering = 1) as f:
