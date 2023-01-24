@@ -54,8 +54,7 @@ We plan to gather the maximum sensors data. The data will be saved in a .CSV fil
 
 **LIBRARIES**
 - SenseHat (from sense_hat)
-- PAth (from pathlib)
-- pandas
+- Path (from pathlib)
 - MotionSensor (from gpiozero)
 - time
 - datetime, timedelta (from datetime)
