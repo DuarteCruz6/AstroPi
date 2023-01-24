@@ -2,4 +2,4 @@
 - Put some delay on the sensors (cause of space) (the max is 3GB)
 - Check how the day/night afects the other data
 - Use trinket to create graphs
-- Read CPU temperature https://gpiozero.readthedocs.io/en/stable/ https://projects.raspberrypi.org/en/projects/code-for-your-astro-pi-mission-space-lab-experiment/2
+- Read CPU temperature https://gpiozero.readthedocs.io/en/stable/ https://projects.raspberrypi.org/en/projects/code-for-your-astro-pi-mission-space-lab-experiment/2 https://gpiozero.readthedocs.io/en/stable/api_internal.html#cputemperature
