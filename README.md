@@ -69,5 +69,5 @@ We plan to gather the maximum sensors data. The data will be saved in a .CSV fil
 - Is it easily reproduced?
 - Is the data usable/interesting?
 
-**IMPORTANT NOTE**
-Make sure to save both files in the same location (file, per example)
+NOTE:
+- Make sure to save both files in the same location (file, per example)
