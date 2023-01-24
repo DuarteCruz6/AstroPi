@@ -1,4 +1,4 @@
-*** This project was made for Mission Space Lab ***
+                                               *** This project was made for Mission Space Lab ***
 
 **Code for AstroPi 2022/2023 - Project Hercules**
 
