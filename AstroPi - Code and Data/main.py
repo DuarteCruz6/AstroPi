@@ -85,6 +85,3 @@ while now_time - start_time < x :
     sense.show_message(dic[int(i)] + " " + str(value) ,scroll_speed = 0.08)        #Shows the data on the LED screen      
     now_time = datetime.now()
   
-sense.clear()    
-file = open(file)
-file.close()
