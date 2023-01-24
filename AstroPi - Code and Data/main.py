@@ -22,6 +22,8 @@ data_file = base_folder / "data.csv"
 #Variable that lets us check what's beijng shown in the LED Screen
 i = 0
 dic = ["TIME","MOTION","PRESSURE", "TEMPERATURE FROM HUMIDITY SENSOR","TEMPERATURE FROM PRESSURE SENSOR","HUMIDITY","LIGHT", "MOVIMENT X-ASSIS", "MOVIMENT Y-ASSIS", "MOVIMENT Z-ASSIS", "ACCELERATION X-ASSIS", "ACCELERATION Y-ASSIS", "ACCELERATION Z-ASSIS"]
+x = timedelta(hours = 2, minutes = 59, seconds = 42) 
+loopTime = {0:15, 1:6, 2:18, 3:19, 4:7, 5:11, 6:12, 7:12, 8:12, 9:13,10:13,11:13}
 
 #Writes an Header on the .csv file
 with open (data_file, "w", buffering = 1) as f:
@@ -29,7 +31,7 @@ with open (data_file, "w", buffering = 1) as f:
    f.write("\n")
 
 #Loop that runs for 3 hours      
-while now_time - start_time < timedelta(hours = 2, minutes = 59, seconds = 42) : 
+while now_time - start_time < x : 
     time = datetime.now()
     def show():                                        #Function that changes the data on the LED screen if the astronaut presses the joystick
         global i
@@ -66,7 +68,7 @@ while now_time - start_time < timedelta(hours = 2, minutes = 59, seconds = 42) :
     sense.stick.direction_any = show                    #If the astronaut moves the joystick, he wants to check some value on the LED's
     values = {"0": time, "1":m, "2":p, "3":t_h, "4":t_p,"5":h,"6":l, "7":x,"8":y,"9":z,"10":a_x,"11":a_y,"12":a_z}
     value = values[str(int(i))]                        #Corresponds the data to the joystick
-    
+
     if type(value) == float:
         value = round(value,1)
    
@@ -78,9 +80,9 @@ while now_time - start_time < timedelta(hours = 2, minutes = 59, seconds = 42) :
         sense.set_rotation(180)
     else:
         sense.set_rotation(270)
-    
-    sense.show_message(dic[int(i)] + " " + str(value) ,scroll_speed = 0.08)        #Shows the data on the LED screen
 
+    x = timedelta(hours = 2, minutes = 59, seconds = 60- loopTime[i])                 #Changes the time of the loop
+    sense.show_message(dic[int(i)] + " " + str(value) ,scroll_speed = 0.08)        #Shows the data on the LED screen      
     now_time = datetime.now()
   
 sense.clear()    
