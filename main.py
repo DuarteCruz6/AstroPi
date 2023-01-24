@@ -22,7 +22,6 @@ data_file = base_folder / "data.csv"
 
 #Variable that lets us check what's beijng shown in the LED Screen
 i = 0
-
 dic = ["TIME","MOTION","PRESSURE", "TEMPERATURE FROM HUMIDITY SENSOR","TEMPERATURE FROM PRESSURE SENSOR","HUMIDITY","LIGHT", "MOVIMENT X-ASSIS", "MOVIMENT Y-ASSIS", "MOVIMENT Z-ASSIS", "ACCELERATION X-ASSIS", "ACCELERATION Y-ASSIS", "ACCELERATION Z-ASSIS"]
 
 #Writes an Header on the .csv file
