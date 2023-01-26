@@ -22,7 +22,7 @@ data_file = base_folder / "data.csv"
 
 #Some variables
 i = 0                                                                                                             #Variable that lets us check what's being shown in the LED Screen
-dic = ["TIME","MOTION","PRESSURE", "TEMPERATURE FROM HUMIDITY SENSOR","TEMPERATURE FROM PRESSURE SENSOR","CPU TEMPERATURE","HUMIDITY","LIGHT", "MOVEMENT X-ASSIS", "MOVEMENT Y-ASSIS", "MOVEMENT Z-ASSIS", "ACCELERATION X-ASSIS", "ACCELERATION Y-ASSIS", "ACCELERATION Z-ASSIS"]     #What data will be shown on the LED screen
+dic = ["TIME","MOTION","PRESSURE", "TEMPERATURE FROM HUMIDITY SENSOR","TEMPERATURE FROM PRESSURE SENSOR","CPU TEMPERATURE","HUMIDITY","LIGHT", "MOVEMENT X-ASSIS", "MOVEMENT Y-ASSIS", "MOVEMENT Z-ASSIS", "ACCELERATION X-ASSIS", "ACCELERATION Y-ASSIS", "ACCELERATION Z-ASSIS"]     #Which data will be shown on the LED screen
 x = timedelta(hours = 2, minutes = 59, seconds = 60)                                                              #Time of the loop
 loopTime = {0:15, 1:6, 2:8, 3:18, 4:19, 5:13, 6:7, 7:11, 8:12, 9:12, 10:12, 11:13, 12:13, 13:13}                  #How much it takes to each data + value to show on the LED matrix
 
@@ -80,5 +80,6 @@ while now_time - start_time < x :
     i+= 1                                                                          #Changes the data being showed on the LED screen
     if i == 14:
             i = 0
+         
     now_time = datetime.now()                                                      #Changes the value of now_time to the current time
 
