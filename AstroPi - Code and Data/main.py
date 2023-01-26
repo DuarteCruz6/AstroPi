@@ -20,11 +20,11 @@ cpu = CPUTemperature()
 base_folder = Path(__file__).parent.resolve()
 data_file = base_folder / "data.csv"
 
-#Variable that lets us check what's beijng shown in the LED Screen
-i = 0
-dic = ["TIME","MOTION","PRESSURE", "TEMPERATURE FROM HUMIDITY SENSOR","TEMPERATURE FROM PRESSURE SENSOR","CPU TEMPERATURE","HUMIDITY","LIGHT", "MOVEMENT X-ASSIS", "MOVEMENT Y-ASSIS", "MOVEMENT Z-ASSIS", "ACCELERATION X-ASSIS", "ACCELERATION Y-ASSIS", "ACCELERATION Z-ASSIS"]
-x = timedelta(hours = 2, minutes = 59, seconds = 42) 
-loopTime = {0:15, 1:6, 2:8, 3:18, 4:19, 5:13, 6:7, 7:11, 8:12, 9:12, 10:12, 11:13, 12:13, 13:13} #How much it takes to each data + value to show on the LED matrix
+#Some variables
+i = 0                                                                                                             #Variable that lets us check what's being shown in the LED Screen
+dic = ["TIME","MOTION","PRESSURE", "TEMPERATURE FROM HUMIDITY SENSOR","TEMPERATURE FROM PRESSURE SENSOR","CPU TEMPERATURE","HUMIDITY","LIGHT", "MOVEMENT X-ASSIS", "MOVEMENT Y-ASSIS", "MOVEMENT Z-ASSIS", "ACCELERATION X-ASSIS", "ACCELERATION Y-ASSIS", "ACCELERATION Z-ASSIS"]     #What data will be shown on the LED screen
+x = timedelta(hours = 2, minutes = 59, seconds = 60)                                                              #Time of the loop
+loopTime = {0:15, 1:6, 2:8, 3:18, 4:19, 5:13, 6:7, 7:11, 8:12, 9:12, 10:12, 11:13, 12:13, 13:13}                  #How much it takes to each data + value to show on the LED matrix
 
 #Writes an Header on the .csv file
 with open (data_file, "w", buffering = 1) as f:
@@ -32,9 +32,8 @@ with open (data_file, "w", buffering = 1) as f:
    f.write("\n")
 
 #Loop that runs for 3 hours      
-while now_time - start_time < x : 
-    time = datetime.now()                                       
-    if pir.value == 1:                                   #Motion
+while now_time - start_time < x :                          
+    if pir.value == 1:                                   #Motion 
         m = "YES"
     elif pir.value == 0:
         m = "NO"
@@ -43,9 +42,9 @@ while now_time - start_time < x :
     t_p = sense.get_temperature_from_pressure()          #Temperature in the pressure sensor
     t_cpu = cpu.temperature                              #CPU Temperature
     h = sense.get_humidity()                             #Humidity
-    sense.color.gain = 60                                #Light
-    sense.color.integration_cycles = 64                  #Light
-    l = str((sense.colour.colour)).replace(",",".")
+    sense.color.gain = 4                                 #Sensitivity on the light sensor
+    sense.color.integration_cycles = 64                  #Interval between measurameants
+    l = str((sense.colour.colour)).replace(",",".")      #Light (RGBC - Red, Green, Blue, Clear (Brightness))
     orien = sense.get_orientation()                      #Movement on x,y and z assis
     x = orien["pitch"]
     y = orien["roll"]
@@ -57,12 +56,11 @@ while now_time - start_time < x :
     time = datetime.now()                               #Time
                                            
     with open (data_file, "a", buffering = 1) as f:     #Writing the data on the .csv file
-        
         f.write(f"{time},{m}, {p}, {t_h}, {t_p}, {t_cpu}, {h}, {l}, {x}, {y}, {z}, {a_x}, {a_y}, {a_z}")
         f.write("\n")
 
-    values = {"0": time, "1":m, "2":p, "3":t_h, "4":t_p, "5":t_cpu, "6":h, "7":l, "8":x, "9":y, "10":z, "11":a_x, "12":a_y, "13":a_z}
-    value = values[str(int(i))]                        #Corresponds the data to the joystick
+    values = {"0": time, "1":m, "2":p, "3":t_h, "4":t_p, "5":t_cpu, "6":h, "7":l, "8":x, "9":y, "10":z, "11":a_x, "12":a_y, "13":a_z} #Values of each data 
+    value = values[str(int(i))]                        #Corresponds the value to the data being shown on the LED matrix
 
     if type(value) == float:
         value = round(value,1)
@@ -78,8 +76,9 @@ while now_time - start_time < x :
 
     x = timedelta(hours = 2, minutes = 59, seconds = 60- loopTime[i])              #Changes the time of the loop
     sense.show_message(dic[int(i)] + " " + str(value) ,scroll_speed = 0.08)        #Shows the data on the LED screen
+    
     i+= 1                                                                          #Changes the data being showed on the LED screen
     if i == 14:
             i = 0
-    now_time = datetime.now()
+    now_time = datetime.now()                                                      #Changes the value of now_time to the current time
 
