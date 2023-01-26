@@ -42,7 +42,7 @@ while now_time - start_time < x :
     t_p = sense.get_temperature_from_pressure()          #Temperature in the pressure sensor
     t_cpu = cpu.temperature                              #CPU Temperature
     h = sense.get_humidity()                             #Humidity
-    sense.color.gain = 4                                 #Sensitivity on the light sensor
+    sense.color.gain = 256                               #Sensitivity on the light sensor
     sense.color.integration_cycles = 64                  #Interval between measurameants
     l = str((sense.colour.colour)).replace(",",".")      #Light (RGBC - Red, Green, Blue, Clear (Brightness))
     orien = sense.get_orientation()                      #Movement on x,y and z assis
@@ -80,6 +80,5 @@ while now_time - start_time < x :
     i+= 1                                                                          #Changes the data being showed on the LED screen
     if i == 14:
             i = 0
-         
     now_time = datetime.now()                                                      #Changes the value of now_time to the current time
 
