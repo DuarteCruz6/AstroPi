@@ -33,13 +33,7 @@ with open (data_file, "w", buffering = 1) as f:
 
 #Loop that runs for 3 hours      
 while now_time - start_time < x : 
-    time = datetime.now()
-    def show():                                        #Function that changes the data on the LED screen if the astronaut presses the joystick
-        global i
-        i+= 0.5
-        if i == 14:
-            i = 0
-
+    time = datetime.now()                                       
     if pir.value == 1:                                   #Motion
         m = "YES"
     elif pir.value == 0:
@@ -60,14 +54,13 @@ while now_time - start_time < x :
     a_x = a["x"]
     a_y = a["y"]
     a_z = a["z"]
-    time = datetime.now()                                #Time
+    time = datetime.now()                               #Time
                                            
     with open (data_file, "a", buffering = 1) as f:     #Writing the data on the .csv file
         
         f.write(f"{time},{m}, {p}, {t_h}, {t_p}, {t_cpu}, {h}, {l}, {x}, {y}, {z}, {a_x}, {a_y}, {a_z}")
         f.write("\n")
-    
-    sense.stick.direction_any = show                    #If the astronaut moves the joystick, he wants to check some value on the LED's
+
     values = {"0": time, "1":m, "2":p, "3":t_h, "4":t_p, "5":t_cpu, "6":h, "7":l, "8":x, "9":y, "10":z, "11":a_x, "12":a_y, "13":a_z}
     value = values[str(int(i))]                        #Corresponds the data to the joystick
 
@@ -83,7 +76,10 @@ while now_time - start_time < x :
     else:
         sense.set_rotation(270)
 
-    x = timedelta(hours = 2, minutes = 59, seconds = 60- loopTime[i])                 #Changes the time of the loop
-    sense.show_message(dic[int(i)] + " " + str(value) ,scroll_speed = 0.08)        #Shows the data on the LED screen      
+    x = timedelta(hours = 2, minutes = 59, seconds = 60- loopTime[i])              #Changes the time of the loop
+    sense.show_message(dic[int(i)] + " " + str(value) ,scroll_speed = 0.08)        #Shows the data on the LED screen
+    i+= 1                                                                          #Changes the data being showed on the LED screen
+    if i == 14:
+            i = 0
     now_time = datetime.now()
 
