@@ -1,6 +1,5 @@
-*** This project was made for Mission Space Lab ***
-
-**Code for AstroPi 2022/2023 - Project Hercules**
+# Code for AstroPi 2022/2023 - Project Hercules [^1]
+[^1]: This project was made for [Mission Space Lab](https://astro-pi.org/mission-space-lab/) 
 
 Our proposal aims create a analog mission to study the human performance on long space travel or long stays in a space station. We also want to study ways to mitigate these problems.
 
@@ -17,7 +16,7 @@ The results will be publish in graphical comprehensive detail with public access
 We plan to gather the maximum sensors data. The data will be saved in a .CSV file, processed and organized by type. As a backup, raw data from the sensors, with time stamp will also be saved.
 
 
-**MISSION SPACE LAB REQUIREMENTS**
+## MISSION SPACE LAB REQUIREMENTS
 - Needs to use the LED matrix
 - Needs to use at least one sensor
 - Can't record videos and can't also take photos
@@ -26,7 +25,7 @@ We plan to gather the maximum sensors data. The data will be saved in a .CSV fil
 - Can only use the ISS's libraries
 - Needs to be in a ZIP File
 
-**HARDWARE**
+## HARDWARE
 - Raspberry Pi 4 4GB
 - Sense HAT
 - Passive Infrared (PIR) Sensor
@@ -37,7 +36,7 @@ We plan to gather the maximum sensors data. The data will be saved in a .CSV fil
 - 16GB microSD card
 - HDMI Cable
 
-  NOTES:
+  #### NOTES:
   The Sense HAT contains many different sensors such as:
     - Gyroscope
     - Accelerometer
@@ -48,19 +47,20 @@ We plan to gather the maximum sensors data. The data will be saved in a .CSV fil
     - Colour and brightness
     It also contains a 8x8 RGB LED matrix and a five-button joystick
 
-**SOFTWARE**
+## SOFTWARE
 - Special version of the Raspberry Pi Desktop OS (Bullseye 32 bit) that contains the same programs and libraries as the Astro Pis aboard the ISS (International Space Station)
-- Thonny 
+- Thonny IDE
 
-**LIBRARIES**
-- SenseHat (from sense_hat)
-- Path (from pathlib)
-- MotionSensor (from gpiozero)
-- CPUTemperature (from gpiozero)
-- time
-- datetime, timedelta (from datetime)
+## LIBRARIES
+- SenseHat (from [sense_hat](https://pythonhosted.org/sense-hat/))
+- Path (from [pathlib](https://docs.python.org/3/library/pathlib.html))
+- MotionSensor, CPUTemperature (from [gpiozero](https://gpiozero.readthedocs.io/en/stable/))
+- [time](https://docs.python.org/3/library/time.html)
+- datetime, timedelta (from [datetime](https://docs.python.org/3/library/datetime.html))
+- ISS (from [orbit](https://orbit-ml.readthedocs.io/en/latest/))
+- load (from [skyfield.api](https://rhodesmill.org/skyfield/))
 
-**EVALUATION CRITERIA**
+## EVALUATION CRITERIA
 - Does it have scientific use?
 - Can you understand the code?
 - Is the code doccumented?
@@ -69,5 +69,6 @@ We plan to gather the maximum sensors data. The data will be saved in a .CSV fil
 - Is it easily reproduced?
 - Is the data usable/interesting?
 
-NOTE:
-- Make sure to save both files in the same location (create a paste with both, per example)
+### NOTES:
+- Make sure to download [de4221.bsp](https://github.com/DuarteCruz6/AstroPi/blob/main/AstroPi%20-%20Code%20and%20Data/de421.bsp)
+- Make sure to save all [files](https://github.com/DuarteCruz6/AstroPi/tree/main/AstroPi%20-%20Code%20and%20Data) in the same location (create a paste with all, for instance)
