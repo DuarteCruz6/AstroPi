@@ -31,7 +31,7 @@ We plan to gather the maximum sensors data. The data will be saved in a .CSV fil
 - Passive Infrared (PIR) Sensor
 - Tall header pins
 - 3x F-F jumper wires (to connect the PIR Sensor to the Raspberry Pi)
-- 3D-printed filght case
+- 3D-printed flight case
 - Power Supply unit
 - 16GB microSD card
 - HDMI Cable
