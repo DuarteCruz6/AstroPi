@@ -27,6 +27,7 @@ dic = ["TIME","SUNLIGHT ON THE ISS","MOTION","PRESSURE", "TEMPERATURE FROM HUMID
 x = timedelta(hours = 2, minutes = 59, seconds = 60)                                                              #Time of the loop
 loopTime = {0:15, 1:6, 2:6, 3:8, 4:18, 5:19, 6:13, 7:7, 8:11, 9:12, 10:12, 11:12, 12:13, 13:13, 14:13}            #How much it takes to each data + value to show on the LED matrix
 ephemeris = load("de421.bsp")                                                                                     #Table of the position of the Earth and the Sun
+calibrationForTemperature = 2.8                                                                                   #This is to calibrate the values from the sensors, adjust to yours
 
 #Writes an Header on the .csv file
 with open (data_file, "w", buffering = 1) as f:
@@ -35,19 +36,19 @@ with open (data_file, "w", buffering = 1) as f:
 
 #Loop that runs for 3 hours      
 while now_time - start_time < x :                          
-    if pir.value == 1:                                   #Motion 
+    if pir.value == 1:                                                        #Motion 
         m = "YES"
     elif pir.value == 0:
         m = "NO"
-    p = sense.get_pressure()                             #Pressure
-    t_h = sense.get_temperature()                        #Temperature in the humidity sensor
-    t_p = sense.get_temperature_from_pressure()          #Temperature in the pressure sensor
-    t_cpu = cpu.temperature                              #CPU Temperature
-    h = sense.get_humidity()                             #Humidity
-    sense.color.gain = 60                                #Sensitivity on the light sensor
-    sense.color.integration_cycles = 1                   #Interval between measurameants
-    l = str((sense.colour.colour)).replace(",",".")      #Light (RGBC - Red, Green, Blue, Clear (Brightness))
-    orien = sense.get_orientation()                      #Movement on x,y and z assis
+    p = sense.get_pressure()                                                  #Pressure
+    t_h = sense.get_temperature() - calibrationForTemperature                 #Temperature in the humidity sensor
+    t_p = sense.get_temperature_from_pressure() - calibrationForTemperature   #Temperature in the pressure sensor
+    t_cpu = cpu.temperature                                                   #CPU Temperature
+    h = sense.get_humidity()                                                  #Humidity
+    sense.color.gain = 60                                                     #Sensitivity on the light sensor
+    sense.color.integration_cycles = 1                                        #Interval between measurameants
+    l = str((sense.colour.colour)).replace(",",".")                           #Light (RGBC - Red, Green, Blue, Clear (Brightness))
+    orien = sense.get_orientation()                                           #Movement on x,y and z assis
     x = orien["pitch"]
     y = orien["roll"]
     z = orien["yaw"]
