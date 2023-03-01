@@ -1,0 +1,3 @@
+- Add the things from the Art Department such as:
+        - ReadMe
+        - Photos and files from their part of the project
