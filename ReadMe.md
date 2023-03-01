@@ -1,4 +1,4 @@
-#AstroPi 2022/2023 - Project Hercules 1
+# AstroPi 2022/2023 - Project Hercules 1
 
 Our proposal aims create a analog mission to study the human performance on long space travel or long stays in a space station. We also want to study ways to mitigate these problems.
 
