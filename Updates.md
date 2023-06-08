@@ -1,7 +1,7 @@
 - We have just submitted our idea to the RaspberryPi Foundation in hopes of passing! (10 october 2022)
 - Our idea was accepted and we will now begin the production of our code and also the construction of our module! Our colleagues from the other Departments have also started to work in the project (25 november 2022)
 - We have just finished our code and will now submit it! (19 february 2023)
-- We were one of 294 the choosen teams and have just received flight status! (18 april 2023)
+- We were one of 294 the choosen teams from Austria, Belgium, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Luxembourg, the Netherlands, Norway, Poland, Portugal, Romania, Spain, Sweden, Switzerland, United Kingdom, Canada, Latvia, Lithuania, Slovakia, Slovenia, and Malta and have just received flight status! (18 april 2023)
 - We have just received the data from space and the building of our module is finished! (2 june 2023)
 - Our experiments will now start. (12 june 2023)
 - Our experiments are over, time to analyze our data and submit it! (19 june 2023)
