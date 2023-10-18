@@ -5,4 +5,5 @@
 - We have just received the data from space and the building of our module is finished! (2 june 2023)
 - Our experiments will now start. (12 june 2023)
 - Our experiments are over, time to analyze our data and submit it! (19 june 2023)
-- We have just submitted our analyzed data and we have also just done our report! Time to wait for the results. ()
+- We have just submitted our analyzed data and we have also just done our report! Time to wait for the results. (26 june 2023)
+- Our experiment was successful but not enough to win! Congratulations to the teams that one! We are grateful for this experience. (14 july 2023)
